@@ -1,451 +1,198 @@
-﻿{% extends "layout/default.html" %}
-{% block page_content %}
+<!DOCTYPE html>
+<html lang="en">
 
-<script type="text/javascript" src="http://echarts.baidu.com/dist/echarts.min.js"></script>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<head>
 
-<style>
-   #wrapper {
-      display: grid;
-      grid-template-columns: 30% 34% 34%;
-      grid-template-rows: 50% 50%;
-      grid-gap: 1%;
-      height: 100%;
-      margin: 10px 30px;
-   }
-   #kline-wrapper {
-      grid-column: 2/4;
-      height: 100%;
-   }
-   #kline {
-      height: 80%;
-   }
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Bootstrap Website Templates">
 
-   #balance {
-      max-height: 100%
-   }
+    <title>Bitcoin Trade - one page bootstrap website template</title>
+    
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
-</style>
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <link rel="stylesheet" href="css/jquery.lightbox.min.css">
 
-<div id="wrapper">
-   <div class="card" id="member-wrapper">
-      <h3>成员</h3>
-   </div>
-   <div class="card" id="kline-wrapper">
-      <h3>K线</h3>
-      <div id="kline"></div>
-   </div>
+    <!-- Theme CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-   <div class="card" id="history-wrapper">
-      <h3>交易纪录</h3>
-      <div id="history" class="table-responsive"></div>
-   </div>
+</head>
 
-   <div class="card" id="balance-wrapper">
-      <h3>余额</h3>
-      <div id="balance"></div>
-   </div>
+<body id="page-top">
 
-   <div class="card" id="predict-wrapper">
-      <h3>预测</h3>
-      <div id="predict"></div>
-   </div>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top"><img src="images/logo.png" class="img-responsive"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#page-top">首页</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">关于我们</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#buyrate">关于比特币</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#sellrate">天台圈</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#order">行情</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    
+     <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <div class="bwt-header-content">
+                        <div class="bwt-header-content-inner">
+                            <h1>全球化数字资产配置及交易服务</h1>
+                            <h2>独立专业的交易算法研究评估体系</h2>
+                            <h2>Tencent唯一赞助的比特币交易平台</h2>
+                            <a href="#about" class="btn btn-box btn-xl page-scroll">了解更多</a>
+                        </div>
+                    </div>
+                    <div class="bwt-click-to-bottom">
+				<a href="#about" class="scroll">
+					<i class="fa  fa-chevron-down"></i>
+				</a>
+			</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!--about-->
+<section id="about" class="bwt-about text-left">
+<div class="container">
+<div class="row">
+<div class="col-md-6"><img src="images/bitcoin-640.png" class="img-responsive" alt=""></div>
+<div class="col-md-6">
+<h1 class="bwt-section-title text-uppercase">关于我们</h1>
+<hr>
+<h2>安全, 稳定, 可信</h2>
+<p>炒币21天从入门到天台是主要数字资产和加密货币（比特币）的全功能现货交易平台，是Tencent唯一赞助的虚拟货币交易平台。本平台专注比特币，立志于成为全球领先的比特币交易平台。</p>
+<p>我们信仰比特币和区块链的核心思想，认为分布式账本和智能合约技术将构建人类的信任基础，消除交易壁垒，提升交易效率，对人类的实体经济产生重大的影响。因此我们放弃了很多诱惑，全力投入到区块链技术革命的大潮，希望可做一点点改变世界的事情。</p>
+</div>
+</div>
+</div>
+</section>
+<!--//about-->
+
+<!--Buy Rate-->
+<section id="buyrate" class="bwt-buyrate text-left">
+<div class="container text-center">
+<h1 class="bwt-section-title text-uppercase">关于比特币</h1>
+<hr>
+<div class="row">
+<div class="col-md-12">
+<div class="bdr">
+<h2>Bitcoin</h2>
+<!--<div class="image"><img src="images/btc.png" class="img-responsive" alt=""></div>-->
+<p class="text-left">比特币（Bitcoin，简称BTC）是目前使用最为广泛的一种数字货币，诞生于2009年1月3日，是一种点对点（P2P）传输的数字加密货币，总量2100万枚。比特币网络每10分钟释放出一定数量币，预计在2140年达到极限。比特币被投资者称为“数字黄金”。</p>
+<p class="text-left">比特币依据特定算法，通过大量的计算产生，不依靠特定货币机构发行，其使用整个P2P网络中众多节点构成的分布式数据库来确认并记录所有的交易行为，并使用密码学设计确保货币流通各个环节安全性，可确保无法通过大量制造比特币来人为操控币值。基于密码学的设计可以使比特币只能被真实拥有者转移、支付及兑现。同样确保了货币所有权与流通交易的匿名性。</p>
+<!--<a href="#">Buy Now!</a>-->
+</div>
 </div>
 
-<script type="text/javascript">
-var dom = document.getElementById("kline");
-var myChart = echarts.init(dom);
-$(window).on('resize', function(){
-      myChart.resize();
-});
-var app = {};
-option = null;
-var upColor = '#ec0000';
-var upBorderColor = '#8A0000';
-var downColor = '#00da3c';
-var downBorderColor = '#008F28';
+</div>
+</div>
+</section>
+<!--//Buy Rate-->
 
-var datas;
-var data0;
-var option4kline;
+<!--footer-->
+<!--
+<footer class="bwt-footer">
+<div class="container text-left">
+<div class="row">
 
-function setkline(){
-   fetch('/api/kline')
-      .then(function(response) {
-         return response.json();
-      }).then((j)=>{
-         datas = j['data'];
-         //console.log(datas);
-         data0 = splitData(datas);
-         option4kline = setoption(data0);
-         if (option4kline && typeof option4kline === "object") {
-            myChart.setOption(option4kline, true);
-         }
-      });
-}
+<div class="col-sm-12 col-md-4">
+<div class="icon"><i class="fa fa-map-marker"></i></div>
+<div class="icon-text">
+<h3>Our Location</h3>
+<p>744 Melrose Street, Walla Walla, WA, Washington, USA
+</p>
+</div>
+</div>
 
+<div class="col-sm-12 col-md-4 md-top-marg">
+<div class="icon"><i class="fa fa-phone"></i></div>
+<div class="icon-text">
+<h3>Phone Numbers</h3>
+<p>+1-509-876-7242<br>+1-509-876-7242</p>
+</div>
+</div>
 
+<div class="col-sm-12 col-md-4 md-top-marg">
+<div class="icon"><i class="fa fa-envelope-o"></i></div>
+<div class="icon-text">
+<h3>E-Mail Address</h3>
+<p>info@bitcointrade.com<br>
+sales@bitcointrade.com
+</p>
+</div>
+</div>
 
-function splitData(rawData) {
-   var categoryData = [];
-   var values = []
-   for (var i = rawData.length-1;i >= 0;i--) {
-      categoryData.push(rawData[i].splice(0, 1)[0]);
-      values.push(rawData[i]);
-   }
-   return {
-      categoryData: categoryData,
-      values: values
-   };
-}
+</div>
+</div>
+</footer>-->
+<!--//footer-->
 
-function calculateMA(dayCount) {
-   var result = [];
-   for (var i = 0, len = data0.values.length; i < len; i++) {
-      if (i < dayCount) {
-     result.push('-');
-     continue;
-      }
-      var sum = 0;
-      for (var j = 0; j < dayCount; j++) {
-     sum += data0.values[i - j][1];
-      }
-      result.push(sum / dayCount);
-   }
-   return result;
-}
+<!--copyright-->
+<div class="bwt-footer-copyright">
+<div class="container">
+<div class="row">
+<div class="col-md-12 copyright text-center">
+<div class="center-text">Copyright &copy; 炒币21天从入门到天台 2018. All Rights Reserved</div>
+</div>
+</div>
+</div>
+</div>
+<!--//copyright-->
 
+<!--//contact-->
 
+    <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Lightbox JavaScript-->
+    <script src="js/jquery.lightbox.min.js"></script>
+    <!-- Theme JavaScript -->
+    <script src="js/script.js"></script>
 
-function setoption(data0){
-   option = {
-      title: {
-      },
-      tooltip: {
-         trigger: 'axis',
-         axisPointer: {
-            type: 'cross'
-         }
-      },
-      legend: {
-         data: ['日K', 'MA5', 'MA10', 'MA20', 'MA30'],
-         top: '30px'
-      },
-      grid: {
-         left: '4%',
-         right: '4%',
-         bottom: '10%'
-      },
-      xAxis: {
-         type: 'category',
-         data: data0.categoryData,
-         scale: true,
-         boundaryGap : false,
-         axisLine: {onZero: false},
-         splitLine: {show: false},
-         splitNumber: 20,
-         min: 'dataMin',
-         max: 'dataMax',
-         name: 'time'
-      },
-      yAxis: {
-         scale: true,
-         splitArea: {
-            show: true
-         },
-         name: 'BTC-USDT'
-      },
-      dataZoom: [
-         {
-            type: 'inside',
-            start: 80,
-            end: 100
-         },
-         {
-            show: true,
-            type: 'slider',
-            y: '90%',
-            start: 80,
-            end: 100
-         }
-      ],
-      series: [
-         {
-            name: '日K',
-            type: 'candlestick',
-            data: data0.values,
-            itemStyle: {
-               normal: {
-                  color: upColor,
-                  color0: downColor,
-                  borderColor: upBorderColor,
-                  borderColor0: downBorderColor
-               }
-            },
-            markPoint: {
-               label: {
-                  normal: {
-                     formatter: function (param) {
-                        return param != null ? Math.round(param.value) : '';
-                     }
-                  }
-               },
-               data: [
-                  {
-                     name: 'XX标点',
-                     coord: ['2013/5/31', 2300],
-                     value: 2300,
-                     itemStyle: {
-                        normal: {color: 'rgb(41,60,85)'}
-                     }
-                  },
-                  {
-                     name: 'highest value',
-                     type: 'max',
-                     valueDim: 'highest'
-                  },
-                  {
-                     name: 'lowest value',
-                     type: 'min',
-                     valueDim: 'lowest'
-                  },
-                  {
-                     name: 'average value on close',
-                     type: 'average',
-                     valueDim: 'close'
-                  }
-               ],
-               tooltip: {
-                  formatter: function (param) {
-                     return param.name + '<br>' + (param.data.coord || '');
-                  }
-               }
-            },
-            markLine: {
-               symbol: ['none', 'none'],
-               data: [
-                  [
-                     {
-                        name: 'from lowest to highest',
-                        type: 'min',
-                        valueDim: 'lowest',
-                        symbol: 'circle',
-                        symbolSize: 10,
-                        label: {
-                           normal: {show: false},
-                           emphasis: {show: false}
-                        }
-                     },
-                     {
-                        type: 'max',
-                        valueDim: 'highest',
-                        symbol: 'circle',
-                        symbolSize: 10,
-                        label: {
-                           normal: {show: false},
-                           emphasis: {show: false}
-                        }
-                     }
-                  ],
-                  {
-                     name: 'min line on close',
-                     type: 'min',
-                     valueDim: 'close'
-                  },
-                  {
-                     name: 'max line on close',
-                     type: 'max',
-                     valueDim: 'close'
-                  }
-               ]
-            }
-         },
-         {
-            name: 'MA5',
-            type: 'line',
-            data: calculateMA(5),
-            smooth: true,
-            lineStyle: {
-               normal: {opacity: 0.5}
-            }
-         },
-         {
-            name: 'MA10',
-            type: 'line',
-            data: calculateMA(10),
-            smooth: true,
-            lineStyle: {
-               normal: {opacity: 0.5}
-            }
-         },
-         {
-            name: 'MA20',
-            type: 'line',
-            data: calculateMA(20),
-            smooth: true,
-            lineStyle: {
-               normal: {opacity: 0.5}
-            }
-         },
-         {
-            name: 'MA30',
-            type: 'line',
-            data: calculateMA(30),
-            smooth: true,
-            lineStyle: {
-               normal: {opacity: 0.5}
-            }
-         },
-      ] 
-   };
-   return option;
-}
-setkline();
-setInterval(setkline, 60000);
-
-
-//////////////////////////////////////////////////////////
-
-
-window.onload = function () {
-   var dataPoints1 = [];
-   var dataPoints2 = [];
-
-   var chart = new CanvasJS.Chart("balance", {
-      zoomEnabled: true,
-      title: {
-         text: ""
-      },
-      axisX: {
-         title: ""
-      },
-      axisY:{
-         prefix: "$",
-         includeZero: false
-      }, 
-      toolTip: {
-         shared: true
-      },
-      legend: {
-         cursor:"pointer",
-         verticalAlign: "top",
-         fontSize: 22,
-         fontColor: "dimGrey",
-         itemclick : toggleDataSeries
-      },
-      data: [{ 
-         type: "line",
-         xValueType: "dateTime",
-         yValueFormatString: "$####.00",
-         xValueFormatString: "hh:mm:ss TT",
-         showInLegend: true,
-         name: "交易余额",
-         dataPoints: dataPoints1
-      }]
-   });
-
-   function toggleDataSeries(e) {
-      if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-         e.dataSeries.visible = false;
-      }
-      else {
-         e.dataSeries.visible = true;
-      }
-      chart.render();
-   }
-
-   var updateInterval = 3000;
-   // initial value
-   var yValue1 = 0; 
-   var yValue2 = 100;
-
-   var time = new Date();
-   // starting at 9.30 am
-   // time.setHours(9);
-   // time.setMinutes(30);
-   // time.setSeconds(00);
-   // time.setMilliseconds(00);
-
-   function updateChart(count) {
-      count = count || 1;
-      time = new Date();
-      fetch("/api/balance").then(
-         (response)=>{
-            return response.json();
-         }
-      ).then((data)=>{
-         //console.log(data['list'][0]['balance']);
-         yValue1 = parseFloat(data['list'][0]['balance']);
-         dataPoints1.push({
-            x: time.getTime(),
-            y: yValue1
-         });
-         chart.options.data[0].legendText = "交易余额 $" + yValue1;
-         chart.render();
-      });
-      // yValue1++;
-      // dataPoints1.push({
-      //         x: time.getTime(),
-      //         y: yValue1
-      //     });
-      // chart.render();
-   }
-
-   // generates first set of dataPoints 
-   updateChart(0);    
-   setInterval(function(){updateChart()}, updateInterval);
-   loadtable();
-
-}
-////////////////////////////////////////////
-function  createTable(id,data,title){
-   id.children("table").remove()
-
-   var table = $('<table class="table table-striped table-sm">');
-
-   table.appendTo(id);
-
-
-   tableHead=new Array("时间","买入/卖出","成交价","成交量")
-   var tr = $("<thead></thead>");
-   tr.appendTo(table);
-   for(var i=0;i<tableHead.length;i++)
-   {
-      var td = $("<th >"+tableHead[i]+"</th>");
-      td.appendTo(tr);
-   }
-   
-   table.append('<tbody>')
-
-   for(var i=0;i<data.length;i++){
-      var tr=$("<tr></tr>");
-      tr.appendTo(table);
-      for(var j=0;j<data[i].length;j++){
-         var td = $("<td>" + data[i][j] + "</td>");
-         td.appendTo(tr);
-      }
-   }
-
-   table.append('</tbody>')
-
-   id.append("</table>");
-}
-
-function loadtable() {
-   fetch('/api/history').then(data => data.json())
-                        .then(data => {
-                           createTable($('#history'), data, '交易纪录')
-                        })
-}
-
-function start_trade(){
-   fetch('/api/start');
-}
-
-function stop_trade(){
-   fetch('/api/stop');
-}
-
-</script>
-
-{% endblock %}
+</body>
+</html>	
